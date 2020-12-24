@@ -2,11 +2,13 @@ package com.devbuildrun.dailytask
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.view.MenuItem
+import com.devbuildrun.dailytask.navigation.calendar.CalendarAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+//class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+    class MainActivity : AppCompatActivity() {
 
     private lateinit var calendarAdapter: CalendarAdapter
 
@@ -18,4 +20,12 @@ class MainActivity : AppCompatActivity() {
         calendar.adapter = calendarAdapter
         calendar.setCurrentItem(CalendarAdapter.START_POSITION, false)
     }
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//
+//    }
+//
+//    fun setToolbarDefault() {
+//
+//    }
 }
