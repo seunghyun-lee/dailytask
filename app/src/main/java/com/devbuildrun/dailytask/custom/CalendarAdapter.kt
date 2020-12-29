@@ -1,7 +1,10 @@
-package com.devbuildrun.dailytask.navigation.calendar
+package com.devbuildrun.dailytask.custom
 
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.devbuildrun.dailytask.navigation.DetailFragment
 import org.joda.time.DateTime
 
 class CalendarAdapter(fm: FragmentActivity): FragmentStateAdapter(fm) {
