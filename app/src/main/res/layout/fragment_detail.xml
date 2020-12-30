@@ -10,17 +10,23 @@
     <!--헤더-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:animateLayoutChanges="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorLightGray"
         android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/testtext"
-            android:gravity="center"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/monthinfo"
+                android:textSize="16sp"
+                android:text="YYYYMM"
+                android:textColor="@color/colorNavIcon"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="22dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
     </LinearLayout>
     <!--요일-->
     <LinearLayout
@@ -99,10 +105,4 @@
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-<!--        <com.devbuildrun.dailytask.custom.CalendarView-->
-<!--            android:id="@+id/calendarViewpage"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--    </androidx.viewpager2.widget.ViewPager2>-->
 </LinearLayout>
