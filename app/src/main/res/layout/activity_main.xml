@@ -45,13 +45,6 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_main"
-        >
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-<!--    <androidx.viewpager2.widget.ViewPager2-->
-<!--        android:id="@+id/calendar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+        app:menu="@menu/bottom_navigation_main"/>
 
 </RelativeLayout>

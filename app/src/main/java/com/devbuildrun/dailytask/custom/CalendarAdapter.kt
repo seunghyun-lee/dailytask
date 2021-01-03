@@ -25,6 +25,7 @@ class CalendarAdapter(fm: FragmentActivity): FragmentStateAdapter(fm) {
         val date = DateTime(itemId)
         return date.dayOfMonth == 1 && date.millisOfDay == 0
     }
+
     companion object {
         const val START_POSITION = Int.MAX_VALUE / 2
     }
