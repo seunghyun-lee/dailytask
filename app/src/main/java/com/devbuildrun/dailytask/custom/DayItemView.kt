@@ -1,13 +1,14 @@
 package com.devbuildrun.dailytask.custom
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.text.TextPaint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.View
+import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.core.content.withStyledAttributes
@@ -26,6 +27,8 @@ class DayItemView @JvmOverloads constructor(
 ) : View(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
     private val bounds = Rect()
     private var paint: Paint = Paint()
+
+    private val datetv: TextView? = null
 
     init {
         // Attributes
@@ -49,12 +52,14 @@ class DayItemView @JvmOverloads constructor(
         if (canvas == null) return
         
         val date = date.dayOfMonth.toString()
-        paint.getTextBounds(date, 0, date.length, bounds)
+
+//        paint.getTextBounds(date, 0, date.length, bounds)
         canvas.drawText(
             date,
-            (width / 2 - bounds.width() / 2).toFloat() - 2,
+            (width / 2 - bounds.width() / 2).toFloat() -2 ,
             (height / 2 - bounds.height() / 2).toFloat(),
             paint
         )
+
     }
 }

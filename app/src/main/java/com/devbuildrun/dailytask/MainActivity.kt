@@ -3,23 +3,26 @@ package com.devbuildrun.dailytask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.devbuildrun.dailytask.custom.CalendarAdapter
+import com.devbuildrun.dailytask.databinding.ActivityMainBinding
 import com.devbuildrun.dailytask.navigation.DetailFragment
 import com.devbuildrun.dailytask.navigation.TodoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-//    class MainActivity : AppCompatActivity() {
 
-    private lateinit var calendarAdapter: CalendarAdapter
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        bottom_navigation.setOnNavigationItemSelectedListener(this)
-        bottom_navigation.selectedItemId = R.id.action_todoitems
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(this)
+        binding.bottomNavigation.selectedItemId = R.id.action_calendar
 
     }
 
