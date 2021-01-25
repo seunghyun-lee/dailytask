@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.devbuildrun.dailytask.R
+import com.devbuildrun.dailytask.data.AppDatabase
 import com.devbuildrun.dailytask.databinding.FragmentTodoitemBinding
 
 class TodoItemFragment() : Fragment() {
@@ -16,6 +18,9 @@ class TodoItemFragment() : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        final AppDatabase db = Room.databaseBuilder(this.context, AppDatabase: class.java, "todoitem-db")
+        
     }
 
     override fun onCreateView(
