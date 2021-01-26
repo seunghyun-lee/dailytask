@@ -1,10 +1,8 @@
 package com.devbuildrun.dailytask.data
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
+@Dao
 interface TodoitemDao {
     @Query("SELECT * FROM Todoitem")
     fun getAll(): List<Todoitem>

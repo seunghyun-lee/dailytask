@@ -1,5 +1,6 @@
 package com.devbuildrun.dailytask.navigation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,12 +16,13 @@ class TodoItemFragment() : Fragment() {
 
     private var _binding: FragmentTodoitemBinding? = null
     private val binding get() = _binding!!
+    private var mContext: Context? = null
+
+    private var todoItemRecyclerViewAdapter: TodoItemRecyclerViewAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        final AppDatabase db = Room.databaseBuilder(this.context, AppDatabase: class.java, "todoitem-db")
-        
     }
 
     override fun onCreateView(
@@ -34,6 +36,22 @@ class TodoItemFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        val db = Room.databaseBuilder(mContext!!, AppDatabase::class.java,"todoitem-db").build()
+//        binding.testTextview.text = db.todoitamDao().getAll().toString()
+        todoItemRecyclerViewAdapter = TodoItemRecyclerViewAdapter()
+
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     inner class TodoItemRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {

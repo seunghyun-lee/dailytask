@@ -6,6 +6,7 @@ import android.view.MenuItem
 import com.devbuildrun.dailytask.databinding.ActivityMainBinding
 import com.devbuildrun.dailytask.navigation.DetailFragment
 import com.devbuildrun.dailytask.navigation.TodoFragment
+import com.devbuildrun.dailytask.navigation.TodoItemFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 //import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             R.id.action_todoitems -> {
                 var todoFragment = TodoFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, todoFragment).commit()
+                return true
+            }
+            R.id.action_note -> {
+                var todoItemFragment = TodoItemFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, todoItemFragment).commit()
                 return true
             }
         }
